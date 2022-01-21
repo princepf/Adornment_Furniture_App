@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 
 import 'Components/catogary_list.dart';
 import 'Components/search_bar.dart';
+import 'notification_page.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -31,7 +32,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 "assets/icons/notification.svg",
                 height: 20,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NotificationPage()));
+              },
             ),
             SizedBox(
               width: 10,
