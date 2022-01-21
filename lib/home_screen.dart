@@ -1,5 +1,6 @@
 import 'package:adornment/Components/product_card.dart';
 import 'package:adornment/Model/product_model.dart';
+import 'package:adornment/detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -40,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Column(
           children: [
             //search
-            SearchBar(),
+            SearchBar(onChanged: (value) {}),
             //catogary list
             CatogaryList(),
             SizedBox(
@@ -64,6 +65,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (context, index) => ProductCard(
                     itemIndex: index,
                     product: products[index],
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailScreen(
+                                    image: '',
+                                  )));
+                    },
                   ),
                 )
               ],
