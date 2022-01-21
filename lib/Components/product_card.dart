@@ -48,6 +48,7 @@ class ProductCard extends StatelessWidget {
             Positioned(
               top: 0,
               right: 0,
+              bottom: 10,
               child: Hero(
                 tag: '${product.id}',
                 child: Container(
