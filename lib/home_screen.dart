@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           backgroundColor: Color(0xFF035AA6),
           elevation: 0,
-          title: Text("Dashbord"),
+          title: Text("Adornment"),
           actions: <Widget>[
             IconButton(
               icon: SvgPicture.asset(

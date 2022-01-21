@@ -31,7 +31,7 @@ class DetailScreen extends StatelessWidget {
       ),
       centerTitle: false,
       title: Text(
-        'Back'.toUpperCase(),
+        'Details'.toUpperCase(),
         style: Theme.of(context).textTheme.bodyText2,
       ),
       actions: <Widget>[
