@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'bottom_nav_bar.dart';
 import 'home_screen.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeScreen(),
+      home: BottomNavBar(),
     );
   }
 }
