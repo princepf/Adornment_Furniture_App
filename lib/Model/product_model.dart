@@ -86,7 +86,7 @@ List<Product> products = [
     id: 10,
     price: 40,
     title: "Patio Bench",
-    image: "assets/images/cbanch.png",
+    image: "assets/images/parkbench.png",
     description:
         "Vestre is a Norwegian manufacturer of urban furniture. Long term sustainability. Quality products in solid construction. Take a look at our product selection and order now.",
   ),

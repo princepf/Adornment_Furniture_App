@@ -65,7 +65,7 @@ class Body extends StatelessWidget {
                     ),
                   ),
 
-                  //Description
+                  //Title
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 10),
                     child: Text(
@@ -73,10 +73,14 @@ class Body extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline6,
                     ),
                   ),
+
+                  //price
                   Text(
                     "\$${product.price}",
                     style: TextStyle(fontSize: 18, color: Color(0xFFFFA41B)),
                   ),
+
+                  //Description
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 10),
                     child: Text(
@@ -91,34 +95,46 @@ class Body extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(20),
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              decoration: BoxDecoration(
-                  color: Color(0xFFFCBF1E),
-                  borderRadius: BorderRadius.circular(30)),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(
-                    "assets/icons/chat.svg",
-                    height: 18,
+                  Container(
+                    margin: EdgeInsets.all(20),
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    decoration: BoxDecoration(
+                        color: Color(0xFFFCBF1E),
+                        borderRadius: BorderRadius.circular(30)),
+                    child: FlatButton.icon(
+                      onPressed: () {},
+                      icon: SvgPicture.asset(
+                        "assets/icons/chat.svg",
+                        height: 18,
+                      ),
+                      label: Text(
+                        "Chat",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 20,
                   ),
-                  Text(
-                    "chat",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Spacer(),
-                  FlatButton.icon(
-                    onPressed: () {},
-                    icon: SvgPicture.asset(
-                      "assets/icons/shopping-bag.svg",
-                      height: 18,
-                    ),
-                    label: Text(
-                      "Add to Cart",
-                      style: TextStyle(color: Colors.white),
+                  Container(
+                    margin: EdgeInsets.all(20),
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    decoration: BoxDecoration(
+                        color: Color(0xFFFCBF1E),
+                        borderRadius: BorderRadius.circular(30)),
+                    child: FlatButton.icon(
+                      onPressed: () {},
+                      icon: SvgPicture.asset(
+                        "assets/icons/shopping-bag.svg",
+                        height: 18,
+                      ),
+                      label: Text(
+                        "Add to Cart",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 ],

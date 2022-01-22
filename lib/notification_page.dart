@@ -14,8 +14,20 @@ class _NotificationPageState extends State<NotificationPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [
+                  const Color(0xFF3366FF),
+                  const Color(0xFF00CCFF),
+                ],
+                begin: const FractionalOffset(0.0, 0.0),
+                end: const FractionalOffset(1.0, 0.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp),
+          ),
+        ),
         backgroundColor: Colors.white,
-        elevation: 0,
         leading: IconButton(
           padding: EdgeInsets.only(left: 20),
           icon: SvgPicture.asset("assets/icons/back.svg"),

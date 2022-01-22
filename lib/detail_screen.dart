@@ -10,7 +10,7 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF035AA6),
+      backgroundColor: Color(0xFF11A0EB),
       appBar: buildAppBar(context),
       body: Body(
         product: product,
@@ -20,7 +20,19 @@ class DetailScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [
+                const Color(0xFF3366FF),
+                const Color(0xFF00CCFF),
+              ],
+              begin: const FractionalOffset(0.0, 0.0),
+              end: const FractionalOffset(1.0, 0.0),
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp),
+        ),
+      ),
       elevation: 0,
       leading: IconButton(
         padding: EdgeInsets.only(left: 20),

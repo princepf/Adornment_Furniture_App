@@ -1,8 +1,8 @@
 import 'package:adornment/Model/product_model.dart';
 import 'package:flutter/material.dart';
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({
+class ProductCardHori extends StatelessWidget {
+  const ProductCardHori({
     Key? key,
     required this.itemIndex,
     required this.product,
@@ -20,7 +20,7 @@ class ProductCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       height: 160,
-      width: 350,
+      width: 280,
       child: InkWell(
         onTap: press,
         child: Stack(
@@ -39,7 +39,7 @@ class ProductCard extends StatelessWidget {
                         color: Colors.black12)
                   ]),
               child: Container(
-                margin: EdgeInsets.only(right: 10),
+                margin: EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(22)),
@@ -49,13 +49,16 @@ class ProductCard extends StatelessWidget {
               top: 0,
               right: 0,
               bottom: 10,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                height: 160,
-                width: 200,
-                child: Image.asset(
-                  product.image,
-                  fit: BoxFit.cover,
+              child: Hero(
+                tag: '${product.id}',
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  height: 160,
+                  width: 200,
+                  child: Image.asset(
+                    product.image,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -70,7 +73,7 @@ class ProductCard extends StatelessWidget {
                     children: <Widget>[
                       Spacer(),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding: EdgeInsets.only(left: 10, right: 90),
                         child: Text(
                           product.title,
                           style: Theme.of(context).textTheme.button,
@@ -92,7 +95,29 @@ class ProductCard extends StatelessWidget {
                       )
                     ],
                   ),
-                ))
+                )),
+            Positioned(
+              bottom: 20,
+              right: 10,
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                          offset: Offset(0, 4),
+                          color: Colors.grey,
+                          blurRadius: 5,
+                          spreadRadius: 1)
+                    ]),
+                child: Icon(
+                  Icons.add,
+                  color: Color(0xFF00CCFF),
+                ),
+              ),
+            ),
           ],
         ),
       ),
