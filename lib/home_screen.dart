@@ -22,9 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       bottom: false,
       child: Scaffold(
-        //backgroundColor: Color(0xFF035AA6),
         appBar: AppBar(
-          // backgroundColor: Color(0xFF035AA6),
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -39,7 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           elevation: 0,
-          title: Text("Adornment"),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Furniture Shop"),
+              Text(
+                "Get unique furniture for your home",
+                style: TextStyle(color: Colors.grey[300], fontSize: 15),
+              ),
+            ],
+          ),
           actions: <Widget>[
             IconButton(
               icon: SvgPicture.asset(
@@ -72,12 +79,28 @@ class _HomeScreenState extends State<HomeScreen> {
               SearchBar(onChanged: (value) {}),
 
               //catogary list
+
               CatogaryList(),
 
               //product horizontal
-
+              Padding(
+                padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Trending Furniture",
+                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    FlatButton(
+                      onPressed: () {},
+                      child: Text("View All",
+                          style:
+                              TextStyle(color: Colors.blue[900], fontSize: 15)),
+                    )
+                  ],
+                ),
+              ),
               Container(
-                height: 200,
+                height: 150,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: products.length,
@@ -95,10 +118,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
+
               //products verticle
+              Container(
+                padding: const EdgeInsets.only(top: 0, left: 20, right: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Featured Furniture",
+                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    FlatButton(
+                      onPressed: () {},
+                      child: Text("View All",
+                          style:
+                              TextStyle(color: Colors.blue[900], fontSize: 15)),
+                    )
+                  ],
+                ),
+              ),
               Expanded(
                   child: Stack(
                 children: <Widget>[

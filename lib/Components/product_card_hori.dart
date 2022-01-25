@@ -53,8 +53,8 @@ class ProductCardHori extends StatelessWidget {
                 tag: '${product.id}',
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  height: 160,
-                  width: 200,
+                  height: 120,
+                  width: 160,
                   child: Image.asset(
                     product.image,
                     fit: BoxFit.cover,
